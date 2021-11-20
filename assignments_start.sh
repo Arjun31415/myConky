@@ -1,3 +1,3 @@
-sleep 30
+sleep 15
 conky -c ~/myConky/assignments.conkyrc
  
