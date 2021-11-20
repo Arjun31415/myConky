@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.service import Service
 
 load_dotenv()
 
@@ -15,17 +16,18 @@ usernameStr = "20BCE1029"
 passwordStr = os.environ.get("PASSWORD")
 options = webdriver.ChromeOptions()
 options.binary_location = "/usr/bin/brave"
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')
 
-browser = webdriver.Chrome(
-    executable_path="/home/arjun/myConky/scripts/chromedriver", chrome_options=options
-)
+browser = webdriver.Chrome(service=Service(
+    "/home/arjun/myConky/scripts/chromedriver"), options=options)
 browser.get('https://lms.vit.ac.in/login/index.php')
 
-username = browser.find_element_by_id('username')
-password = browser.find_element_by_id('password')
+username = browser.find_element(By.ID, 'username')
+password = browser.find_element(By.ID, 'password')
 username.send_keys(usernameStr)
 password.send_keys(passwordStr)
-browser.find_element_by_id('loginbtn').click()
+browser.find_element(By.ID, 'loginbtn').click()
 
 xpath = "//*[starts-with(@id, 'month-upcoming-mini')]"
 loaded_assignments = WebDriverWait(browser, 10).until(
@@ -34,10 +36,8 @@ loaded_assignments = WebDriverWait(browser, 10).until(
     )
 )
 
-assignment = browser.find_element_by_xpath(
-    xpath
-)
-child_elements = assignment.find_elements_by_xpath('.//*')
+assignment = browser.find_element(By.XPATH, xpath)
+child_elements = assignment.find_elements(By.XPATH, './/*')
 
 
 text_assignments = assignment.text
