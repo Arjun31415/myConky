@@ -1,3 +1,4 @@
 .vscode/
 *.env
 scripts/get_teams_assignment.py
+*.venv/
