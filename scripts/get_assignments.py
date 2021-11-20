@@ -1,4 +1,4 @@
-#!/home/arjun/.local/share/virtualenvs/myConky-kSysQeVB/bin/python
+#!/home/arjun/myConky/scripts/.venv/bin/python3.10
 import sys
 import os
 import pprint
@@ -13,8 +13,11 @@ load_dotenv()
 
 usernameStr = "20BCE1029"
 passwordStr = os.environ.get("PASSWORD")
+options = webdriver.ChromeOptions()
+options.binary_location = "/usr/bin/brave"
+
 browser = webdriver.Chrome(
-    executable_path="/home/arjun/myConky/scripts/chromedriver"
+    executable_path="/home/arjun/myConky/scripts/chromedriver", chrome_options=options
 )
 browser.get('https://lms.vit.ac.in/login/index.php')
 
