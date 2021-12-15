@@ -55,7 +55,7 @@ conky.text = [[
 ${alignc}${font Droid Sans Mono:pixelsize=40}${time %H:%M}${font}
 ${voffset 5}${alignc}${font Droid Sans Mono:pixelsize=15}${time %A %d %B %Y}${font}
 ${color1}Uptime: ${color}$alignr $uptime
-${color1}Distribution:${color}$alignr ${execi 6300 cat /etc/issue.net} $machine
+${color1}Distribution:${color}$alignr ${execi 6300 (( lsb_release -ds || cat /etc/*release || uname -om ) 2>/dev/null | head -n1)| tr -d '"'} $machine
 ${color1}Kernel:$alignr${color} $kernel
 ${color1}Hostname:$alignr${color} $nodename
 #${color6}${voffset 2}${hr 1}
@@ -107,7 +107,7 @@ ${color1}${goto 313}CPU 16${goto 373}${color orange}${cpu cpu16}%
 #${color1}${goto 13}CPU 7 ${goto 81}${color orange}${cpu cpu7}% ${goto 131}${color}${cpubar cpu7 18}
 #${color1}${goto 13}CPU 8 ${goto 81}${color orange}${cpu cpu8}% ${goto 131}${color}${cpubar cpu8 18}
 ${color6}${voffset 2}${hr 1}
-${color1}Ubuntu 21.04 root & Home: ${goto 220}${color orange}${fs_used /} $alignr${color}${fs_free /}
+${color1}${execi 6300 (( lsb_release -ds || cat /etc/*release || uname -om ) 2>/dev/null | head -n1)| tr -d '"'} Root & Home: ${goto 220}${color orange}${fs_used /} $alignr${color}${fs_free /}
 ${color6}${voffset 2}${hr 1}
 
 #Network
