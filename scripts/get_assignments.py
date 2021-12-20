@@ -1,4 +1,4 @@
-#!/home/arjun/myConky/scripts/.venv/bin/python3.10
+#!/home/arjun/myConky/.venv/bin/python3
 import sys
 import os
 import pprint
