@@ -13,7 +13,7 @@ conky.config = {
     draw_shades = false,
     use_xft = true,
     font = 'DejaVu Sans Mono:size=10',
-    gap_x = 5,
+    gap_x = 20,
     gap_y = 60,
     minimum_height = 5,
     minimum_width = 400,
@@ -28,7 +28,7 @@ conky.config = {
     own_window_colour='000000',   -- Set a black background for contrast
     own_window_transparent = false,
     own_window_argb_visual = true,
-    own_window_argb_value = 200,
+    own_window_argb_value = 100,
     own_window_type = 'normal',
     own_window_hints = 'sticky',
     own_window_title = "conky",
@@ -58,11 +58,7 @@ ${color1}Uptime: ${color}$alignr $uptime
 ${color1}Distribution:${color}$alignr ${execi 6300 (( lsb_release -ds || cat /etc/*release || uname -om ) 2>/dev/null | head -n1)| tr -d '"'} $machine
 ${color1}Kernel:$alignr${color} $kernel
 ${color1}Hostname:$alignr${color} $nodename
-#${color6}${voffset 2}${hr 1}
-# Due Assignments
-#${color1}Due Assignments:
-#${color}${execpi 25200 /home/arjun/myConky/scripts/get_assignments.py}
-#${color6}${voffset 2}${hr 1}
+#
 # Ram
 ${voffset 60}${alignr 65}${memperc}%
 ${color1}RAM${color} : ${mem} / ${memmax} 
@@ -74,7 +70,6 @@ ${color1}Frequency: ${color orange}${freq} MHz ${color}/ ${color grey}${freq_g} 
 
 # CPU
 # Row 1
-#${color}CPU usage: ${color orange}${cpu}% ${goto 131}${color}Temp: ${color orange}${hwmon 1 temp 1}°C ${color}
 ${alignr 25} ${voffset 10}${color orange}${cpu}% ${alignr 25}${color orange}${hwmon 1 temp 1}°C ${color}
 ${color1}${voffset 0}CPU${color} :
 ${cpugraph 60,255 7fff00 ff0000 -t}
