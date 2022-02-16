@@ -15,12 +15,12 @@ load_dotenv()
 usernameStr = "20BCE1029"
 passwordStr = os.environ.get("PASSWORD")
 options = webdriver.ChromeOptions()
-options.binary_location = "/usr/bin/brave"
+options.binary_location = "/usr/bin/google-chrome-stable"
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
 
 browser = webdriver.Chrome(service=Service(
-    "/home/arjun/myConky/scripts/chromedriver"), options=options)
+    "/usr/bin/chromedriver"), options=options)
 browser.get('https://lms.vit.ac.in/login/index.php')
 
 username = browser.find_element(By.ID, 'username')
