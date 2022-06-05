@@ -10,7 +10,7 @@ conky.config = {
     draw_borders = false,
     draw_graph_borders = true,
     draw_outline = false,
-	border_inner_margin=10,
+    border_inner_margin = 10,
     draw_shades = false,
     use_xft = true,
     font = 'DejaVu Sans Mono:size=16',
@@ -26,22 +26,22 @@ conky.config = {
     extra_newline = false,
     own_window = true,
     own_window_class = 'Conky',
-    own_window_colour='01012b',   -- Set a black background for contrast
+    own_window_colour = '01012b', -- Set a black background for contrast
     own_window_transparent = false,
     own_window_argb_visual = true,
-    own_window_argb_value =260,
+    own_window_argb_value = 260,
     own_window_type = 'normal',
     own_window_hints = 'sticky',
     own_window_title = "Due Assignments",
-    default_color='00bfff',
+    default_color = '00bfff',
     stippled_borders = 0,
     update_interval = 1.0,
     uppercase = false,
     use_spacer = 'none',
     show_graph_range = false,
     show_graph_scale = true,
-    color1 ='ff2a6d',
-    color2='05d9e8'
+    color1 = 'ff2a6d',
+    color2 = '05d9e8'
 
 }
 
@@ -49,8 +49,8 @@ conky.text = [[
 
 # Due Assignments
 ${color1}Due Assignments:
-${color}${execpi 25200 /home/arjun/myConky/scripts/get_assignments.py}
+${color}${execpi 25200 ~/myConky/scripts/get_assignments.py}
 #${color green}${voffset 2}${hr 1}
 
-]] 
- 
+]]
+
