@@ -1,6 +1,6 @@
 conky.config = {
     alignment = 'bottom_right',
-    background = false,
+    background = true,
     border_width = 1,
     cpu_avg_samples = 4,
     default_color = 'white',
@@ -9,7 +9,7 @@ conky.config = {
     draw_borders = false,
     draw_graph_borders = true,
     draw_outline = false,
-	border_inner_margin=10,
+    border_inner_margin = 10,
     draw_shades = false,
     use_xft = true,
     font = 'DejaVu Sans Mono:size=10',
@@ -25,14 +25,14 @@ conky.config = {
     extra_newline = false,
     own_window = true,
     own_window_class = 'conky',
-    own_window_colour='000000',   -- Set a black background for contrast
+    own_window_colour = '000000', -- Set a black background for contrast
     own_window_transparent = false,
     own_window_argb_visual = true,
     own_window_argb_value = 100,
     own_window_type = 'normal',
     own_window_hints = 'sticky',
     own_window_title = "conky",
-    default_color='00bfff',
+    default_color = '00bfff',
     stippled_borders = 0,
     update_interval = 1.0,
     uppercase = false,
@@ -41,10 +41,10 @@ conky.config = {
     show_graph_scale = true,
     lua_load = '~/myConky/rings.lua',
     lua_draw_hook_pre = 'rings',
-    color1='ff124f',
-    color2='#b000ff',
-    color3='fe75fe',
-    color4='7a04eb',
+    color1 = 'ff124f',
+    color2 = '#b000ff',
+    color3 = 'fe75fe',
+    color4 = '7a04eb',
     color5 = '120458',
     color6 = '#08f7fe'
 
@@ -119,6 +119,5 @@ ${color}${goto 13}${top name 3} ${goto 150}${top pid 3} ${goto 210}${color orang
 ${color}${goto 13}${top name 4} ${goto 150}${top pid 4} ${goto 210}${color orange}${top cpu 4} ${goto 280}${top mem 4}
 ${color}${goto 13}${top name 5} ${goto 150}${top pid 5} ${goto 210}${color orange}${top cpu 5} ${goto 280}${top mem 5}
 ${color orange}${voffset 2}${hr 1}
-]] 
-
+]]
 
