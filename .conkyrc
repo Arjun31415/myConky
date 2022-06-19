@@ -3,7 +3,6 @@ conky.config = {
     background = true,
     border_width = 1,
     cpu_avg_samples = 4,
-    default_color = 'white',
     default_outline_color = 'white',
     default_shade_color = 'white',
     draw_borders = false,
@@ -26,14 +25,14 @@ conky.config = {
     own_window = true,
     own_window_class = 'conky',
     own_window_colour = '000000', -- Set a black background for contrast
-    own_window_transparent = false,
+    own_window_transparent = true,
     own_window_argb_visual = true,
     own_window_argb_value = 100,
-    own_window_type = 'normal',
-    own_window_hints = 'sticky',
+    own_window_type = 'override',
+    own_window_hints = 'sticky,undecorated,below,skip_taskbar,skip_pager',
     own_window_title = "conky",
-    default_color = '00bfff',
-    stippled_borders = 0,
+    default_color = '#6EC1D6',
+    stippled_borders = 1,
     update_interval = 1.0,
     uppercase = false,
     use_spacer = 'none',
@@ -41,12 +40,29 @@ conky.config = {
     show_graph_scale = true,
     lua_load = '~/myConky/rings.lua',
     lua_draw_hook_pre = 'rings',
-    color1 = 'ff124f',
-    color2 = '#b000ff',
-    color3 = 'fe75fe',
-    color4 = '7a04eb',
-    color5 = '120458',
-    color6 = '#08f7fe'
+    color0 = '#242D35',
+    color1 = "#FB6396",
+    color2 = "#94CF95",
+    color3 = "#F692B2",
+    color4 = "#6EC1D6",
+    color5 = "#CD84C8",
+    color6 = "#7FE4D2",
+    color7 = "#DCDCDC",
+    color8 = "#526170",
+    color9 = "#F92D72",
+    color10 = "#6CCB6E",
+    color11 = "#F26190",
+    color12 = "#4CB9D6",
+    color13 = "#C269BC",
+    color14 = "#58D6BF",
+    color15 = "#F4F5F2"
+
+    -- color1 = 'ff124f',
+    -- color2 = '#b000ff',
+    -- color3 = 'fe75fe',
+    -- color4 = '7a04eb',
+    -- color5 = '120458',
+    -- color6 = '#08f7fe'
 
 }
 
@@ -54,70 +70,70 @@ conky.text = [[
 # Distribution
 ${alignc}${font Droid Sans Mono:pixelsize=40}${time %H:%M}${font}
 ${voffset 5}${alignc}${font Droid Sans Mono:pixelsize=15}${time %A %d %B %Y}${font}
-${color1}Uptime: ${color}$alignr $uptime
-${color1}Distribution:${color}$alignr ${execi 6300 (( lsb_release -ds || cat /etc/*release || uname -om ) 2>/dev/null | head -n1)| tr -d '"'} $machine
-${color1}Kernel:$alignr${color} $kernel
-${color1}Hostname:$alignr${color} $nodename
+${color7}Uptime: ${color}$alignr $uptime
+${color7}Distribution:${color5}$alignr ${execi 6300 (( lsb_release -ds || cat /etc/*release || uname -om ) 2>/dev/null | head -n1)| tr -d '"'} $machine
+${color7}Kernel:$alignr${color} $kernel
+${color7}Hostname:$alignr${color2} $nodename
 #
 # Ram
 ${voffset 60}${alignr 65}${memperc}%
-${color1}RAM${color} : ${mem} / ${memmax} 
+${color7}RAM${color} : ${color9}${mem} ${color}/ ${memmax} 
 #${memperc}% $membar
 #${memgraph 60,255 7fff00 ff0000 -t}
-${color1}${voffset 5}AMD Ryzen 7 4800H
-${color1}Frequency: ${color orange}${freq} MHz ${color}/ ${color grey}${freq_g} GHz
-#${color orange}Fan: ${color}${hwmon 3 fan 2}
+${color6}${voffset 5}AMD Ryzen 7 4800H
+${color7}Frequency: ${color5}${freq} MHz ${color}/ ${color grey}${freq_g} GHz
+#${color5}Fan: ${color}${hwmon 3 fan 2}
 
-# CPU
+# CPU 
 # Row 1
-${alignr 25} ${voffset 10}${color orange}${cpu}% ${alignr 25}${color orange}${hwmon 1 temp 1}°C ${color}
-${color1}${voffset 0}CPU${color} :
+${alignr 25} ${voffset 10}${color5}${cpu}% ${alignr 25}${color5}${hwmon 1 temp 1}°C ${color}
+${color6}${voffset 0}CPU${color} :
 ${cpugraph 60,255 7fff00 ff0000 -t}
-${color1}${goto 13}CPU 01${goto 73}${color orange}${cpu cpu1}%#
-${goto 113}${color1}CPU 02${goto 173}${color orange}${cpu cpu2}%#
-${color1}${goto 213}CPU 03${goto 273}${color orange}${cpu cpu3}%#
-${color1}${goto 313}CPU 04${goto 373}${color orange}${cpu cpu4}% 
+${color6}${goto 13}CPU 01${goto 73}${color5}${cpu cpu1}%#
+${goto 113}${color6}CPU 02${goto 173}${color5}${cpu cpu2}%#
+${color6}${goto 213}CPU 03${goto 273}${color5}${cpu cpu3}%#
+${color6}${goto 313}CPU 04${goto 373}${color5}${cpu cpu4}% 
 # Row 2
-${goto 13}${color1}CPU 05${goto 73}${color orange}${cpu cpu5}%#
-${color1}${goto 113}CPU 06${goto 173}${color orange}${cpu cpu6}%#
-${color1}${goto 213}CPU 07${goto 273}${color orange}${cpu cpu7}%#
-${goto 313}${color1}CPU 08${goto 373}${color orange}${cpu cpu8}% 
+${goto 13}${color6}CPU 05${goto 73}${color5}${cpu cpu5}%#
+${color6}${goto 113}CPU 06${goto 173}${color5}${cpu cpu6}%#
+${color6}${goto 213}CPU 07${goto 273}${color5}${cpu cpu7}%#
+${goto 313}${color6}CPU 08${goto 373}${color5}${cpu cpu8}% 
 # Row 3
-${color1}${goto 13}CPU 09${goto 73}${color orange}${cpu cpu9}%#
-${color1}${goto 113}CPU 10${goto 173}${color orange}${cpu cpu10}%#
-${goto 213}${color1}CPU 11${goto 273}${color orange}${cpu cpu11}%#
-${color1}${goto 313}CPU 12${goto 373}${color orange}${cpu cpu12}%
+${color6}${goto 13}CPU 09${goto 73}${color5}${cpu cpu9}%#
+${color6}${goto 113}CPU 10${goto 173}${color5}${cpu cpu10}%#
+${goto 213}${color6}CPU 11${goto 273}${color5}${cpu cpu11}%#
+${color6}${goto 313}CPU 12${goto 373}${color5}${cpu cpu12}%
 #Row 4
-${color1}${goto 13}CPU 13${goto 73}${color orange}${cpu cpu13}%#
-${goto 113}${color1}CPU 14${goto 173}${color orange}${cpu cpu14}%#
-${color1}${goto 213}CPU 15${goto 273}${color orange}${cpu cpu5}%#
-${color1}${goto 313}CPU 16${goto 373}${color orange}${cpu cpu16}% 
+${color6}${goto 13}CPU 13${goto 73}${color5}${cpu cpu13}%#
+${goto 113}${color6}CPU 14${goto 173}${color5}${cpu cpu14}%#
+${color6}${goto 213}CPU 15${goto 273}${color5}${cpu cpu5}%#
+${color6}${goto 313}CPU 16${goto 373}${color5}${cpu cpu16}% 
 # Old rows
-#${color1}${goto 13}CPU 1 ${goto 81}${color orange}${cpu cpu2}% ${goto 131}${color}${cpubar cpu2 18}
-#${color1}${goto 13}CPU 2 ${goto 81}${color orange}${cpu cpu3}% ${goto 131}${color}${cpubar cpu3 18}
-#${color1}${goto 13}CPU 3 ${goto 81}${color orange}${cpu cpu4}% ${goto 131}${color}${cpubar cpu4 18}
-#${color1}${goto 13}CPU 4 ${goto 81}${color orange}${cpu cpu5}% ${goto 131}${color}${cpubar cpu5 18}
-#${color1}${goto 13}CPU 5 ${goto 81}${color orange}${cpu cpu5}% ${goto 131}${color}${cpubar cpu5 18}
-#${color1}${goto 13}CPU 6 ${goto 81}${color orange}${cpu cpu6}% ${goto 131}${color}${cpubar cpu6 18}
-#${color1}${goto 13}CPU 7 ${goto 81}${color orange}${cpu cpu7}% ${goto 131}${color}${cpubar cpu7 18}
-#${color1}${goto 13}CPU 8 ${goto 81}${color orange}${cpu cpu8}% ${goto 131}${color}${cpubar cpu8 18}
+#${color6}${goto 13}CPU 1 ${goto 81}${color5}${cpu cpu2}% ${goto 131}${color}${cpubar cpu2 18}
+#${color6}${goto 13}CPU 2 ${goto 81}${color5}${cpu cpu3}% ${goto 131}${color}${cpubar cpu3 18}
+#${color6}${goto 13}CPU 3 ${goto 81}${color5}${cpu cpu4}% ${goto 131}${color}${cpubar cpu4 18}
+#${color6}${goto 13}CPU 4 ${goto 81}${color5}${cpu cpu5}% ${goto 131}${color}${cpubar cpu5 18}
+#${color6}${goto 13}CPU 5 ${goto 81}${color5}${cpu cpu5}% ${goto 131}${color}${cpubar cpu5 18}
+#${color6}${goto 13}CPU 6 ${goto 81}${color5}${cpu cpu6}% ${goto 131}${color}${cpubar cpu6 18}
+#${color6}${goto 13}CPU 7 ${goto 81}${color5}${cpu cpu7}% ${goto 131}${color}${cpubar cpu7 18}
+#${color6}${goto 13}CPU 8 ${goto 81}${color5}${cpu cpu8}% ${goto 131}${color}${cpubar cpu8 18}
 ${color6}${voffset 2}${hr 1}
-${color1}${execi 6300 (( lsb_release -ds || cat /etc/*release || uname -om ) 2>/dev/null | head -n1)| tr -d '"'} Root & Home: ${goto 220}${color orange}${fs_used /} $alignr${color}${fs_free /}
+${color6}${execi 6300 (( lsb_release -ds || cat /etc/*release || uname -om ) 2>/dev/null | head -n1)| tr -d '"'} Root & Home: ${goto 220}${color5}${fs_used /} $alignr${color}${fs_free /}
 ${color6}${voffset 2}${hr 1}
 
 #Network
-${color1}Network:${color} ${voffset -1}${font :size=9}${color grey}${addrs wlo1} / ${execpi 300 /home/arjun/myConky/scripts/get_ip.sh}${color}${font}
+${color7}Network:${color} ${voffset -1}${font :size=9}${color grey}${addrs wlo1} / ${execpi 300 /home/arjun/myConky/scripts/get_ip.sh}${color}${font}
 ${voffset 5}${template1}  ${downspeedf wlo1} kB/s ${goto 145}${template0} ${upspeedf wlo1} kB/s
 ${downspeedgraph wlo1 60,120 7fff00 ff0000 -t} ${upspeedgraph wlo1 60,120 7fff00 ff0000 -t}
 ${color6}${voffset 2}${hr 1}
 
-${color}Running processes ${color grey}$running_processes ${color}of ${color orange}$processes ${color}total processes.
-${color1}${voffset 5}Process name: ${goto 160}PID ${goto 225}CPU % ${goto 295}Mem %
-${color}${goto 13}${top name 1} ${goto 150}${top pid 1} ${goto 210}${color orange}${top cpu 1} ${goto 280}${top mem 1}
-${color}${goto 13}${top name 2} ${goto 150}${top pid 2} ${goto 210}${color orange}${top cpu 2} ${goto 280}${top mem 2}
-${color}${goto 13}${top name 3} ${goto 150}${top pid 3} ${goto 210}${color orange}${top cpu 3} ${goto 280}${top mem 3}
-${color}${goto 13}${top name 4} ${goto 150}${top pid 4} ${goto 210}${color orange}${top cpu 4} ${goto 280}${top mem 4}
-${color}${goto 13}${top name 5} ${goto 150}${top pid 5} ${goto 210}${color orange}${top cpu 5} ${goto 280}${top mem 5}
-${color orange}${voffset 2}${hr 1}
+${color}Running processes ${color grey}$running_processes ${color}of ${color5}$processes ${color}total processes.
+${color6}${voffset 5}Process name: ${goto 160}PID ${goto 225}CPU % ${goto 295}Mem %
+${color}${goto 13}${top name 1} ${goto 150}${top pid 1} ${goto 210}${color5}${top cpu 1} ${goto 280}${top mem 1}
+${color}${goto 13}${top name 2} ${goto 150}${top pid 2} ${goto 210}${color5}${top cpu 2} ${goto 280}${top mem 2}
+${color}${goto 13}${top name 3} ${goto 150}${top pid 3} ${goto 210}${color5}${top cpu 3} ${goto 280}${top mem 3}
+${color}${goto 13}${top name 4} ${goto 150}${top pid 4} ${goto 210}${color5}${top cpu 4} ${goto 280}${top mem 4}
+${color}${goto 13}${top name 5} ${goto 150}${top pid 5} ${goto 210}${color5}${top cpu 5} ${goto 280}${top mem 5}
+${color5}${voffset 2}${hr 1}
 ]]
 

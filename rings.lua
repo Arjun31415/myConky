@@ -1,8 +1,10 @@
 local config = {
     -- bg_color = 0x11ffff,
-    bg_color = 0x450eff,
-    bg_alpha = 0.5,
-    fg_color = 0x08f7fe,
+    -- bg_color = 0x450eff,
+    bg_color= 0x4CB9D6,
+    bg_alpha = 0.9,
+    -- fg_color = 0x08f7fe,
+    fg_color=0xf92d72,
     fg_alpha = 0.8
 }
 local elements = {
