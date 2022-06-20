@@ -117,15 +117,15 @@ ${color6}${goto 313}CPU 16${goto 373}${color5}${cpu cpu16}%
 #${color6}${goto 13}CPU 6 ${goto 81}${color5}${cpu cpu6}% ${goto 131}${color}${cpubar cpu6 18}
 #${color6}${goto 13}CPU 7 ${goto 81}${color5}${cpu cpu7}% ${goto 131}${color}${cpubar cpu7 18}
 #${color6}${goto 13}CPU 8 ${goto 81}${color5}${cpu cpu8}% ${goto 131}${color}${cpubar cpu8 18}
-${color6}${voffset 2}${hr 1}
+${color9}${voffset 2}${hr 1}
 ${color6}${execi 6300 (( lsb_release -ds || cat /etc/*release || uname -om ) 2>/dev/null | head -n1)| tr -d '"'} Root & Home: ${goto 220}${color5}${fs_used /} $alignr${color}${fs_free /}
-${color6}${voffset 2}${hr 1}
+${color9}${voffset 2}${hr 1}
 
 #Network
 ${color7}Network:${color} ${voffset -1}${font :size=9}${color grey}${addrs wlo1} / ${execpi 300 /home/arjun/myConky/scripts/get_ip.sh}${color}${font}
 ${voffset 5}${template1}  ${downspeedf wlo1} kB/s ${goto 145}${template0} ${upspeedf wlo1} kB/s
 ${downspeedgraph wlo1 60,120 7fff00 ff0000 -t} ${upspeedgraph wlo1 60,120 7fff00 ff0000 -t}
-${color6}${voffset 2}${hr 1}
+${color9}${voffset 2}${hr 1}
 
 ${color}Running processes ${color grey}$running_processes ${color}of ${color5}$processes ${color}total processes.
 ${color6}${voffset 5}Process name: ${goto 160}PID ${goto 225}CPU % ${goto 295}Mem %
@@ -134,6 +134,6 @@ ${color}${goto 13}${top name 2} ${goto 150}${top pid 2} ${goto 210}${color5}${to
 ${color}${goto 13}${top name 3} ${goto 150}${top pid 3} ${goto 210}${color5}${top cpu 3} ${goto 280}${top mem 3}
 ${color}${goto 13}${top name 4} ${goto 150}${top pid 4} ${goto 210}${color5}${top cpu 4} ${goto 280}${top mem 4}
 ${color}${goto 13}${top name 5} ${goto 150}${top pid 5} ${goto 210}${color5}${top cpu 5} ${goto 280}${top mem 5}
-${color5}${voffset 2}${hr 1}
+${color9}${voffset 2}${hr 1}
 ]]
 
