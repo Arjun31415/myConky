@@ -15,7 +15,7 @@ load_dotenv()
 usernameStr = "20BCE1029"
 passwordStr = os.environ.get("PASSWORD")
 options = webdriver.ChromeOptions()
-options.binary_location = "/usr/bin/google-chrome-stable"
+options.binary_location = "/usr/bin/chromium"
 options.add_argument("--headless")
 options.add_argument("--disable-gpu")
 
