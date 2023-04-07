@@ -57,13 +57,6 @@ conky.config = {
     color14 = "#58D6BF",
     color15 = "#F4F5F2"
 
-    -- color1 = 'ff124f',
-    -- color2 = '#b000ff',
-    -- color3 = 'fe75fe',
-    -- color4 = '7a04eb',
-    -- color5 = '120458',
-    -- color6 = '#08f7fe'
-
 }
 
 conky.text = [[
